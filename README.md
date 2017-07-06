@@ -1,2 +1,4 @@
 # kcmvp
-kcmvp_noise_source_ubuntu
+
+## 7월6일 KCMVP 관련
+- 우분투에 있는 잡음원 수집소스 및 결과값 
