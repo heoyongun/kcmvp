@@ -9,10 +9,10 @@
 #define ENT_BUFFER_LEN      4096*4
 using namespace std;
 
-ofstream outFile("/home/testcfi/Desktop/random.txt");
+ofstream outFile("/home/testcfi/Desktop/xxd_urandom.txt");
 //FILE* uptime = popen("head -c 15 /dev/random | mmencode","r");
 void get_random(){
-    FILE* uptime = popen("head -c 16 /dev/random","r"); //2017-7-11 without mmencode
+    FILE* uptime = popen("xxd -l 30 -p /dev/urandom","r"); //2017-7-11 without mmencode
     ostringstream output;
     int n=0;
     int j=0;

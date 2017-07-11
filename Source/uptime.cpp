@@ -17,16 +17,16 @@ void get_uptime(){
     char buf[ENT_BUFFER_LEN];
     while((n=fread(buf,1,ENT_BUFFER_LEN,uptime))>0){
         for(j=0;j<n;j++) {
-            outFile << hex << (int)buf[j];
+            outFile << buf[j];
         }
     }
-    outFile << endl;
     outFile.flush();
 }
 int main(){
     cout<<"[+] start uptime"<<endl;
     for(int i=0;i<256;i++){
         get_uptime();
+        cout << "count:" << i << endl;
         sleep(1);
     }
     cout<<"[+] done" << endl;

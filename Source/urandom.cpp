@@ -9,10 +9,10 @@
 #define ENT_BUFFER_LEN      4096*4
 using namespace std;
 
-ofstream outFile("/home/testcfi/Desktop/random.txt");
+ofstream outFile("/home/testcfi/Desktop/urandom.txt");
 //FILE* uptime = popen("head -c 15 /dev/random | mmencode","r");
 void get_random(){
-    FILE* uptime = popen("head -c 16 /dev/random","r"); //2017-7-11 without mmencode
+    FILE* uptime = popen("head -c 32 /dev/urandom","r");    //2017-7-11 without mmencode
     ostringstream output;
     int n=0;
     int j=0;
@@ -22,11 +22,12 @@ void get_random(){
             outFile << buf[j];
         }
     }
+    outFile << endl;    //2017-7-11 add endl (if not bitcode can erase it)
     outFile.flush();
 }
 
 int main(){
-    cout << "[+] start random" << endl;
+    cout << "[+] start urandom" << endl;
     for(int i=0;i<256;i++){
         get_random();
         cout << "count:" << i << endl;
